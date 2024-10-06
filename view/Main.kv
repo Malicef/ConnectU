@@ -1,0 +1,80 @@
+<MainWidget>:
+    canvas.before:
+        Color:
+            rgba: 235/255, 235/255, 235/255, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Image:
+        source: './assets/.png'
+        size_hint: None, None 
+        size: 319, 264
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7} 
+
+    Label:
+        text: 'CONNECT U'
+        color: 47/255, 46/255, 46/255, 1
+        font_size: '57sp'
+        font_name: './assets/Inter-VariableFont.ttf'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.44}
+
+    BoxLayout:
+        size_hint: 0.669, 0.084
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        orientation: 'horizontal'
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: 9/255, 24/255, 64/255, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [16, 16, 16, 16]
+        
+        Image:
+            source: './assets/User.png'
+            size_hint: None, None
+            size: 24, 24
+            pos_hint: {'center_y': 0.5}
+            padding: [10, 10, 10, 10]
+
+        TextInput:
+            id: text_input_user
+            hint_text: 'Usuário'
+            hint_text_color: 237/255, 242/255, 250/255, 1
+            padding: [10, 10, 10, 10]
+            halign: 'right'
+            valign: 'center'
+            foreground_color: 1, 1, 1, 1
+            background_color: 0, 0, 0, 0
+
+    BoxLayout:
+        size_hint: 0.669, 0.084
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        orientation: 'horizontal'
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: 9/255, 24/255, 64/255, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [16, 16, 16, 16]
+        
+        Image:
+            source: './assets/Lock.png'
+            size_hint: None, None
+            size: 24, 24
+            pos_hint: {'center_y': 0.5}
+            padding: [10, 20, 10, 10]
+
+        TextInput:
+            id: text_input_password
+            hint_text: 'Senha'
+            hint_text_color: 237/255, 242/255, 250/255, 1
+            padding: [10, 0, 10, 10]
+            halign: 'right'
+            valign: 'center'
+            foreground_color: 1, 1, 1, 1
+            background_color: 0, 0, 0, 0
