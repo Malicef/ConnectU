@@ -1,5 +1,6 @@
-#import AgendaDeServicos from AgendaDeServicos
+from AgendaDeServicos import AgendaDeServicos
 import os
+import sqlite3
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -34,7 +35,7 @@ class Usuario:
                  disponibilidadeHorario, disponibilidadeLocal ):
         
         self.__userID = userID
-        #self.__servicos = AgendaDeServicos()
+        self.__servicos = AgendaDeServicos()
         self.__nome = nome
         self.__email = email
         self.__cep = cep 
@@ -44,8 +45,27 @@ class Usuario:
         self.__disponibilidadeLocal = disponibilidadeLocal
 
         def cadastrarUsuario(self, nome, email, cep, rua, numeroDaResidencia, disponibilidadeHorario, disponibilidadeLocal ):
-            pass
+            conexao = sqlite3.connect('src\DB\BANCO.db')
+            cursor = conexao.cursor()
 
+            cursor.execute('''
+            INSERT INTO usuarios (nome, email, cep, rua, numeroDaResidencia, disponibilidadeHorario, disponibilidadeLocal)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            ''', (nome, email, cep, rua, numeroDaResidencia, disponibilidadeHorario, disponibilidadeLocal))
+
+            cursor.commit()
+            conexao.close()
+
+            self.__nome = nome
+            self.__email = email
+            self.__cep = cep
+            self.__rua = rua
+            self.__numeroDaResidencia = numeroDaResidencia
+            self.__disponibilidadeHorario = disponibilidadeHorario
+            self.__disponibilidadeLocal = disponibilidadeLocal
+
+            return f"Usuário {nome} cadastrado com sucesso!"
+        
         def logarUsuario(self):
             pass
 
@@ -54,6 +74,8 @@ class Usuario:
 
         def editarUsuario(self):
             pass
+
+
 
 
         
