@@ -1,7 +1,7 @@
 
 class DisponibilidadeHorario:
     def __init__(self, horarioInicio, horarioFim, horarioID=None):
-        self.__horarioID = None
-        self.__horarioInicio = horarioInicio
-        self.__horarioFim = horarioFim
+        self._horarioID = None
+        self._horarioInicio = horarioInicio
+        self._horarioFim = horarioFim
 
