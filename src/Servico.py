@@ -1,9 +1,0 @@
-class Servico:
-    def __init__(self, servico, servicold, data, local, horarioInicio, horarioFim, avaliacao):
-        self.servico = servico
-        self.servicold = servicold
-        self.data = ...
-        self.local = local
-        self.horarioInicio = ...
-        self.horarioFim = ...
-        self.avaliacao = avaliacao

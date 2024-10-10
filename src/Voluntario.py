@@ -2,7 +2,7 @@ from PessoaFisica import PessoaFisica
 
 class Voluntario(PessoaFisica):
     def __init__(self, userID, nome, email, cep, rua, numeroDaResidencia, 
-                 disponibilidadeHorario, disponibilidadeLocal, servicos_prestados):
+                 disponibilidadeHorario, disponibilidadeLocal, servicos_prestados, profissao):
         super().__init__(userID, nome, email, cep, rua, numeroDaResidencia, 
                  disponibilidadeHorario, disponibilidadeLocal)
         self.profissao = profissao
